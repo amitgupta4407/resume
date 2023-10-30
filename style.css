@@ -29,3 +29,7 @@ footer{
 header{
     visibility: hidden;
 }
+
+a[href="https://streamlit.io/cloud"] {
+    display: none;
+}  
