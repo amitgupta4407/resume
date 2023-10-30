@@ -2,8 +2,8 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 from streamlit_lottie import st_lottie
 import requests
-# with open("style.css") as f:
-#     st.markdown(f'<style>{f.read()}<style>', unsafe_allow_html=True)
+with open("style.css") as f:
+    st.markdown(f'<style>{f.read()}<style>', unsafe_allow_html=True)
 
 # st.image("assets\profile2.jpeg"
 # st.set_page_config(layout='wide')
