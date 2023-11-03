@@ -30,6 +30,6 @@ header{
     visibility: hidden;
 }
 
-a[href="https://streamlit.io/cloud"] {
+/* a[href="https://streamlit.io/cloud"] {
     display: none;
-}  
+}   */

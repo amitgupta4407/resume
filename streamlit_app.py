@@ -1,12 +1,14 @@
 import streamlit as st
+import requests
+
 from streamlit_option_menu import option_menu
 from streamlit_lottie import st_lottie
-import requests
+from streamlit_extras.add_vertical_space import add_vertical_space 
+
+st.set_page_config(initial_sidebar_state ="expanded")
+
 with open("style.css") as f:
     st.markdown(f'<style>{f.read()}<style>', unsafe_allow_html=True)
-
-# st.image("assets\profile2.jpeg"
-# st.set_page_config(layout='wide')
 
 def load_lottie_url(url):
     r = requests.get(url)
@@ -16,7 +18,8 @@ def load_lottie_url(url):
     return r.json()
 
 lottie_coder = load_lottie_url('https://lottie.host/63ee9a86-e370-4ec9-8267-378adf7d9f02/aMjXDnjrKb.json')
-
+lottie_pdf = load_lottie_url("https://lottie.host/2f91a4da-fb76-428c-8bfd-1f0913214008/1IWHBtsSRH.json")
+lottie_searchImg = load_lottie_url("https://lottie.host/cae84fb8-6438-4e6a-8383-82bfae4a7adc/ni6XMP7tno.json")
 st.write("##")
 
 st.subheader("Hey Guys :wave:")
@@ -68,7 +71,47 @@ if selected=="About":
                             - Raipur
             """)
 if selected=="Projects":
-    pass 
+    col5, col6 = st.columns([3,1])
+    with col6:
+        add_vertical_space(3)
+        st_lottie(lottie_pdf)
+    with col5:
+        st.write("""
+
+        ### AllAboutPDF       &nbsp;  (Date: Aug 2023 )
+        - TrainWithPDF is an online application designed for handling PDF files.
+        - It offers a range of functionalities, including extracting metadata, images, text, and annotations from PDFs.
+        - One of the standout features of this application is ChatPDF, which utilizes LangChain's natural language processing technology and OpenAI to enable users to interact with their PDFs.
+        """)
+    st.caption("---")
+
+    col6, col5 = st.columns([1,3])
+    with col6:
+        add_vertical_space(3)
+        st_lottie(lottie_searchImg)
+    with col5:
+        st.write("""
+        ### LSB-Stenography &nbsp;  (Date: March 2023 )
+        - Python project for performing basic stenography on images using the Python Imaging Library (PIL).
+        - Allows hiding a message within an image without visibly altering its appearance
+        - Written in Python using the PIL library.
+        """)
+    st.caption("---")
+
+    col5, col6 = st.columns([3,1])
+    with col6:
+        add_vertical_space(3)
+        st_lottie(lottie_pdf)
+    with col5:
+        st.write("""
+
+        ### AllAboutPDF       &nbsp;  (Date: Aug 2023 )
+        - TrainWithPDF is an online application designed for handling PDF files.
+        - It offers a range of functionalities, including extracting metadata, images, text, and annotations from PDFs.
+        - One of the standout features of this application is ChatPDF, which utilizes LangChain's natural language processing technology and OpenAI to enable users to interact with their PDFs.
+        """)
+    st.caption("---")
+
 
 
 
